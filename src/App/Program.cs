@@ -4,7 +4,6 @@ namespace App
 {
     public class Program
     {
-        public static object Get { get; set; }
 
         public static int Main(string[] args)
         {
