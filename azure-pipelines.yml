@@ -35,13 +35,13 @@ steps:
   displayName: 'docker build arm & amd64'
 - script: |
     echo login with $(dockerid)
-    docker --config ./config.json login --username $(dockerid) --password $(dockerpswd)
-    docker --config ./config.json push ramosisw/dotnet-hwm:arm
-    docker --config ./config.json push ramosisw/dotnet-hwm:amd64
-    docker --config ./config.json manifest create ramosisw/dotnet-hwm ramosisw/dotnet-hwm:amd64 ramosisw/dotnet-hwm:arm
-    docker --config ./config.json manifest annotate --arch arm ramosisw/dotnet-hwm ramosisw/dotnet-hwm:arm
-    docker --config ./config.json manifest push ramosisw/dotnet-hwm
-    docker --config ./config.json logout
+    docker --config . login --username $(dockerid) --password $(dockerpswd)
+    docker --config . push ramosisw/dotnet-hwm:arm
+    docker --config . push ramosisw/dotnet-hwm:amd64
+    docker --config . manifest create ramosisw/dotnet-hwm ramosisw/dotnet-hwm:amd64 ramosisw/dotnet-hwm:arm
+    docker --config . manifest annotate --arch arm ramosisw/dotnet-hwm ramosisw/dotnet-hwm:arm
+    docker --config . manifest push ramosisw/dotnet-hwm
+    docker --config . logout
   displayName: 'docker push images'
   
 
