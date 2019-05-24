@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 namespace App
 {
@@ -18,7 +19,7 @@ namespace App
 
         private static string GetArchitecture()
         {
-            return System.Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE");
+            return RuntimeInformation.ProcessArchitecture.ToString();
         }
     }
 }
