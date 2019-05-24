@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 using Xunit;
 
 namespace App.Tests
@@ -19,6 +20,14 @@ namespace App.Tests
         {
             Program.Main(null);
             Assert.True(true);
+        }
+
+        [Fact]
+        public void GetArchitecture()
+        {
+            var expected = RuntimeInformation.ProcessArchitecture.ToString();
+            var actual = Program.GetArchitecture();
+            Assert.Contains(expected, actual);
         }
     }
 }

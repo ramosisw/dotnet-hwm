@@ -17,7 +17,7 @@ namespace App
             return $"Hello World from {GetArchitecture()} CPU";
         }
 
-        private static string GetArchitecture()
+        public static string GetArchitecture()
         {
             return RuntimeInformation.ProcessArchitecture.ToString();
         }
