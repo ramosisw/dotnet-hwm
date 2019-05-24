@@ -2,11 +2,13 @@
 
 namespace App
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static int Main(string[] args)
         {
             Console.WriteLine(GetMessage());
+
+            return 0;
         }
 
         public static string GetMessage()

@@ -1,2 +1,1 @@
-dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=./TestResults/Coverage/ /p:Exclude=\"[xunit*]*,[App*]Auto*\" --logger trx
-reportgenerator "-reports:**\TestResults\Coverage\coverage.cobertura.xml" "-targetdir:TestResults\Coverage" -reporttypes:HTML;HTMLSummary
+dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=./TestResults/Coverage/ /p:Exclude=\"[xunit*]*,[App*]Auto*\" --logger trx && reportgenerator "-reports:**\TestResults\Coverage\coverage.cobertura.xml" "-targetdir:TestResults\Coverage" -reporttypes:HTML;HTMLSummary
