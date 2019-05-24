@@ -31,7 +31,16 @@ steps:
   displayName: 'publish coverage'
 - script: |
     docker build -f src/App/arm.dockerfile -t ramosisw/dotnet-hwm:arm .
-    docker build -f src/App/amd64.dockerfile -t ramosisw/dotnet-hwm:amd .
+    docker build -f src/App/amd64.dockerfile -t ramosisw/dotnet-hwm:amd64 .
   displayName: 'docker build arm & amd64'
+- script: |
+    docker login --username $(DOCKER_ID) --password $(DOCKER_PSWD)
+    docker push ramosisw/dotnet-hwm:amrm
+    docker push ramosisw/dotnet-hwm:amd64
+    docker logout
+  env:
+    DOCKER_ID: $(dockerid)
+    DOCKER_PSWD: $(dockerpswd)
+  displayName: 'docker push images'
   
 
