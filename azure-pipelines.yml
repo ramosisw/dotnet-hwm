@@ -35,7 +35,7 @@ steps:
   displayName: 'docker build arm & amd64'
 - script: |
     docker login --username $env:DOCKER_ID --password $env:DOCKER_PSWD
-    docker push ramosisw/dotnet-hwm:amrm
+    docker push ramosisw/dotnet-hwm:arm
     docker push ramosisw/dotnet-hwm:amd64
     docker logout
   env:
