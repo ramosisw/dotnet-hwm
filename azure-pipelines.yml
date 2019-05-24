@@ -29,3 +29,10 @@ steps:
     codeCoverageTool: 'cobertura'
     summaryFileLocation: '**/*.xml'
   displayName: 'publish coverage'
+  steps:
+- script: |
+    docker build -f src/App/arm.dockerfile -t ramosisw/dotnet-hwm:arm .
+    docker build -f src/App/amd64.dockerfile -t ramosisw/dotnet-hwm:amd .
+  displayName: 'docker build arm & amd64'
+  
+
