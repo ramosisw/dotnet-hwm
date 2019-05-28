@@ -28,4 +28,4 @@ Hello World from Arm CPU
 
 
 # Deploy Trigger
-Only deploy to docker if the commit message starts with [Deploy]
+Only deploy to docker if the commit message starts with `[Deploy]`
