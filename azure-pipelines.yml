@@ -34,6 +34,7 @@ steps:
     docker build -f src/App/amd64.dockerfile -t ramosisw/dotnet-hwm:amd64 .
   displayName: 'docker build arm & amd64'
 - script: |
+    echo $(Build.SourceVersionMessage)
     echo login with $(dockerid)
     docker --config . login --username $(dockerid) --password $(dockerpswd)
     docker --config . push ramosisw/dotnet-hwm:arm
