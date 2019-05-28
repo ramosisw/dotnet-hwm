@@ -25,3 +25,7 @@ Hello World from X64 CPU
 docker run ramosisw/dotnet-hwm
 Hello World from Arm CPU
 ```
+
+
+## Deploy Trigger
+Only deploy to docker if the commit message starts with [Deploy]
