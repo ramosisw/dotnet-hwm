@@ -6,9 +6,6 @@ A dotnet hello world multi-arch docker container
 The intention of this repository is to have a reference to be able to compile multi-architecture images.
 Using Azure DevOps, the .Net Core application that writes the console "Hello World from {arch} CPU" was compiled.
 
-
-On this repository i
-
 # Run docker image on amd64/arm arch
 ```sh
 docker run ramosisw/dotnet-hwm
