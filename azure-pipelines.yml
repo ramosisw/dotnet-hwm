@@ -12,6 +12,7 @@ pool:
 variables:
   buildConfiguration: 'Release'
   projectPath: 'src/App/App.csproj'
+  commitMessage: $(Build.SourceVersionMessage)
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration) $(projectPath)
@@ -34,7 +35,6 @@ steps:
     docker build -f src/App/amd64.dockerfile -t ramosisw/dotnet-hwm:amd64 .
   displayName: 'docker build arm & amd64'
 - script: |
-    echo $(Build.SourceVersionMessage)
     echo login with $(dockerid)
     docker --config . login --username $(dockerid) --password $(dockerpswd)
     docker --config . push ramosisw/dotnet-hwm:arm
@@ -44,5 +44,6 @@ steps:
     docker --config . manifest push ramosisw/dotnet-hwm
     docker --config . logout
   displayName: 'docker push images'
+  condition: and(succeeded(), startsWith(variables['Build.SourceVersionMessage'], '[Deploy]'))
   
 
