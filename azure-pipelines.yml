@@ -37,7 +37,7 @@ steps:
   condition: and(succeeded(), startsWith(variables['Build.SourceVersionMessage'], '[Deploy]'))
 - script: |
     echo login with $(dockerid)
-    docker --config . login --username $(dockerid) --password $(dockerpswd)
+    echo "$(dockerpswd)" | docker --config . login --username $(dockerid) --password-stdin
     docker --config . push ramosisw/dotnet-hwm:arm
     docker --config . push ramosisw/dotnet-hwm:amd64
     docker --config . manifest create ramosisw/dotnet-hwm ramosisw/dotnet-hwm:amd64 ramosisw/dotnet-hwm:arm
