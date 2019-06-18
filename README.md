@@ -1,4 +1,5 @@
 # dotnet-hwm
+[![Build Status](https://cloud.drone.io/api/badges/ramosisw/dotnet-hwm/status.svg)](https://cloud.drone.io/ramosisw/dotnet-hwm)
 [![Build Status](https://dev.azure.com/ramosisw/dotnet-hwm/_apis/build/status/ramosisw.dotnet-hwm?branchName=master)](https://dev.azure.com/ramosisw/dotnet-hwm/_build/latest?definitionId=5&branchName=master) [![Docker-Images](https://img.shields.io/docker/pulls/ramosisw/dotnet-hwm.svg)](https://hub.docker.com/r/ramosisw/dotnet-hwm)
 
 A dotnet hello world multi-arch docker container
