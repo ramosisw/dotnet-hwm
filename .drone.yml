@@ -1,0 +1,8 @@
+kind: pipeline
+name: default
+
+steps:
+- name: build
+  image: mcr.microsoft.com/dotnet/core/sdk:2.2
+  commands:
+    - dotnet build
