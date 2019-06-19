@@ -18,8 +18,8 @@ namespace App.Tests
         [InlineData(0)]
         public void RunWithExit0(int expected)
         {
-            Program.Main(null);
-            Assert.True(true);
+            var actual = Program.Main(null);
+            Assert.Equal(expected, actual);
         }
 
         [Fact]
